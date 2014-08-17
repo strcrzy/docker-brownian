@@ -15,16 +15,17 @@ This repository contains a **Dockerfile** of [Brownian](https://github.com/grigo
 
 #### Alternatively, build an image from Dockerfile
 ```bash
-$ docker build -t blacktop/bro github.com/blacktop/docker-bro
+$ docker build -t strcrzy/brownian github.com/strcrzy/docker-brownian
 ```
 ### Usage
-1. Start an `[elasticsearch](https://index.docker.io/u/dockerfile/elasticsearch/)` container, and give it a name
+1. Start an [elasticsearch](https://index.docker.io/u/dockerfile/elasticsearch/) container, and give it a name
 
 ```bash
 $ docker run -d --name=elasticsearch dockerfile/elasticsearch  
-````
+```
 
 2. Start a `brownian` container, making sure to `--link` in the elasticsearch container as `elasticsearch`
 
+```bash
 $ docker run -d -p 8080 --link elasticsearch:elasticsearch strcrzy/brownian  
 ```
